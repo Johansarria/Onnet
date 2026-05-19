@@ -30,6 +30,31 @@ Una aplicación interactiva en **Streamlit** para la visualización ejecutiva de
 
 ---
 
+## 📸 Capturas de Pantalla (Visualizaciones y Entregables)
+
+### 1. Dashboard Interactivo de Liquidación (Streamlit)
+
+#### Panel de Control y KPIs Principales
+![Panel de Control y KPIs](docs/screenshots/dashboard_kpis.png)
+
+#### Distribución y Evolución de Costos Históricos
+![Distribución de Costos](docs/screenshots/dashboard_charts.png)
+
+#### Distribución por Municipios y Detalle de OTs
+![Detalle y Municipios](docs/screenshots/dashboard_municipios.png)
+
+### 2. Reportes en Excel Generados
+
+#### Pestaña de Resumen de Liquidación (`Resumen_Liquidacion`)
+Muestra el desglose gerencial para los dos escenarios evaluados:
+![Excel Resumen](docs/screenshots/excel_resumen.png)
+
+#### Pestaña de Detalle de OTs (`Ots para liquidación`)
+Vista de los registros liquidados y la fila de totales generales formulados:
+![Excel Detalle](docs/screenshots/excel_detalle.png)
+
+---
+
 ## 🚀 Requisitos e Instalación
 
 Para ejecutar este proyecto de forma local, asegúrese de tener instalado Python 3.10+ y las dependencias requeridas.
