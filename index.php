@@ -5,12 +5,13 @@
  * Para ejecutar: php -S localhost:8000
  */
 
-// Configuración de conexión a la base de datos (Tomada de carga_db.py)
-$host = "localhost";
-$port = "5432";
-$dbname = "onnet_auditoria";
-$user = "postgres";
-$password = "admin123";
+// Configuración de conexión a la base de datos desde .env
+$env = parse_ini_file('.env');
+$host = $env['DB_HOST'] ?? "localhost";
+$port = $env['DB_PORT'] ?? "5432";
+$dbname = $env['DB_NAME'] ?? "onnet_auditoria";
+$user = $env['DB_USER'] ?? "postgres";
+$password = $env['DB_PASSWORD'] ?? "";
 
 try {
     $dsn = "pgsql:host=$host;port=$port;dbname=$dbname";

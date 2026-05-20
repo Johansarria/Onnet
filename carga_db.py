@@ -1,7 +1,12 @@
 import pandas as pd
 from sqlalchemy import create_engine
+import os
+from dotenv import load_dotenv
 
 def inyectar_datos_sql():
+    # Cargar variables de entorno desde .env
+    load_dotenv()
+    
     print("--- INICIANDO CARGA A POSTGRESQL ---")
     
     # 1. Preparación de datos (Igual a la limpieza inicial)
@@ -12,12 +17,12 @@ def inyectar_datos_sql():
         df_contratista['id_caja_nap'] = df_contratista['id_caja_nap'].str.upper().str.strip()
         
         # 2. Configuración de conexión
-        # Credenciales de tu entorno local PostgreSQL
-        usuario = 'postgres'
-        contraseña = 'admin123'  # <-- Recuerda actualizar esto
-        host = 'localhost'
-        puerto = '5432'
-        base_datos = 'onnet_auditoria'
+        # Credenciales cargadas de las variables de entorno
+        usuario = os.getenv('DB_USER')
+        contraseña = os.getenv('DB_PASSWORD')
+        host = os.getenv('DB_HOST')
+        puerto = os.getenv('DB_PORT')
+        base_datos = os.getenv('DB_NAME')
 
         print(f"Conectando a la base de datos: {base_datos}...")
         engine = create_engine(f'postgresql://{usuario}:{contraseña}@{host}:{puerto}/{base_datos}')
